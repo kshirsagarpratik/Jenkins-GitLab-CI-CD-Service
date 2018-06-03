@@ -1,0 +1,6 @@
+requests
+python-jenkins
+python-gitlab
+plotly
+yattag
+nose
