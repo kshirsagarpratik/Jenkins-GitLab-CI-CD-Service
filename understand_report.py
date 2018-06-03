@@ -56,7 +56,7 @@ def create_udb(udb_path, language, project_root):
 def getUnderstandReport(udb_path, report_dir_path):
 
     # set plotly credentials
-    plotly.tools.set_credentials_file(username='sphalt', api_key='c8Y1R7qGgroiIHtEnQrm')
+    plotly.tools.set_credentials_file(username='', api_key='')
 
     # open the udb file
     db = understand.open(udb_path)

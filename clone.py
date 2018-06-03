@@ -7,7 +7,7 @@ import understand_report # our own file
 def diffnund():
 	parent_directory = os.getcwd()
 
-	r = requests.get('http://localhost:30080/api/v4/projects?page=1&per_page=40', headers = {'Private-Token':'9SsFv3LD6ijhGznMSjuK'})
+	r = requests.get('http://localhost:30080/api/v4/projects?page=1&per_page=40', headers = {'Private-Token':''})
 	for item in r.json():
 		repo_name = item['name']
 		repo_url = item['ssh_url_to_repo']
