@@ -51,15 +51,15 @@ Once you have jenkins up and running, install the following plugins:
 
 Configure the maven installation as per the documentation (HW1 Documentation.pdf)
 
-####Installing Python
+#### Installing Python
 
 Download the latest version of Python from https://www.python.org/downloads/. Make sure you download Python 3.x. as that is what we need for the [Understand API](https://scitools.com/support/python-api/)
 
-####Installing pip
+#### Installing pip
 
 Download the latest version of pip from https://pip.pypa.io/en/stable/installing/
 
-####Installing Understand
+#### Installing Understand
 
 You can download the tool and apply for a non-commercial licence at https://scitools.com/non-commercial-license/. During the installation, check the box that lets you add Understand to the `PATH` variable(You can do this later too if you miss it). Once you have successfully installed the tool, you'll need to follow the steps given below to be able to use the [Python API](https://scitools.com/support/python-api/) for Understand
 
@@ -68,9 +68,9 @@ On non-Windows systems, you may need to create an `STIHOME` environment variable
 2. Modify/Add the `PYTHONPATH` environment variable to include the module location, which is `SciTools/bin/<System>/Python`. For Mac users, the python module is in `Understand.app/Contents/MacOS/Python`. All that is necessary to load the module on Mac is to set `PYTHONPATH` to point to that directory and run python3. For example: `PYTHONPATH=/Applications/Understand.app/Contents/MacOS/Python python3`
 
 
-##Description of the implementation
+## Description of the implementation
 
-####How to compile and run it
+#### How to compile and run it
 
 * In Main.py and Clone.py files, replace the Personal Access Token and URL of GitLab according to your setup. 
 * Also you might have to change your network interface as a parameter in Main.py. (The default interface is the eth0 for WiFi on a Mac.)
@@ -92,5 +92,5 @@ On non-Windows systems, you may need to create an `STIHOME` environment variable
 After running Main.py, your GitLab instance will have cloned all the repos from GitHub that meet the criteria of Language = Java.
 You will also see all the Jenkins jobs have been generated and these jobs will trigger builds and Jacoco coverage reports on any push event in GitLab.   
 
-####Limitations of the implementation.
+#### Limitations of the implementation.
 The repositories have to be cloned onto your local machine to generate the reports using the Understand API; This could have been done using a python/shell script in the jenkins build step, thus avoiding cloning the repositories locally.
