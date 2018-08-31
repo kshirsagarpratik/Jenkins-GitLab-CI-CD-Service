@@ -1,5 +1,7 @@
 # DevOps I - Jenkins and GitLab CI/CD Service
 
+> Consume and adapt, adapt and evolve.
+
 #### Installing Docker
 
 *For Mac:* Install the stable version of Docker Community Edition for Mac from [here.](https://docs.docker.com/docker-for-mac/install/)
