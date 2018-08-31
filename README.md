@@ -1,4 +1,4 @@
-Note: Refer to the documentation (HW1 Documentation.pdf) if you encounter any trouble while setting up the environment (Jenkins, GitLab, Docker)
+# DevOps I - Jenkins and GitLab CI/CD Service
 
 #### Installing Docker
 
@@ -24,6 +24,7 @@ sudo docker run --detach --name gitlab \
  gitlab/gitlab-ce:latest
 
 ```
+
 Wait a few minutes to let GitLab start inside the container. (You can view progress with docker logs -f gitlab.) Then, access GitLab via http://127.0.0.1:30080 (or, use your $DOCKER_HOST IP if you are not using localhost) and sign up. 
 
 #### Installing Jenkins
