@@ -1,6 +1,6 @@
 # DevOps I - Jenkins and GitLab CI/CD Service
 
-> Consume and adapt, adapt and evolve.
+> **Consume and adapt, adapt and evolve.**
 
 #### Installing Docker
 
