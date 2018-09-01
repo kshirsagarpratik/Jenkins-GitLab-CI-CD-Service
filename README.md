@@ -191,7 +191,7 @@ that every component is making is actually working correctly as intended.
 
 ---
 
-## Quick Execution
+## Express Execution
 
 #### Installing Docker
 
