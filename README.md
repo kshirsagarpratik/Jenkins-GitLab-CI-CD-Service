@@ -75,7 +75,10 @@ Next, we set up our SSH key and a Private Access Token which can be used to auth
 <h4 align="center">SSH Keys</h4>
 
 ![GitLab-PAT](img/GitLab-PAT.png)
+
 <h4 align="center">Personal Access Tokens</h4>
+
+![GitLab-ssh](img/1.png)
 
 ### Installing Jenkins
 
