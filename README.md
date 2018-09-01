@@ -19,9 +19,9 @@ Our task was to *simulate* a DevOps pipeline with multiple components such as Je
 
 ### Detailed Explanation of steps
 
-![Jenkins](https://github.com/kshirsagarpratik/Jenkins-GitLab-CI-CD-Service/blob/master/Jenkins.png?raw=true)
+![Jenkins](img/Jenkins.png)
 
-### Generating SSH Keys 
+### Generating SSH Keys
 
 SSH keys are required for secure communication between Jenkins, GitLab server and our local machine which hosts these services. It is easy to create SSH keys as follows:
 
@@ -66,15 +66,15 @@ Configuring GitLab was done entirely through the GUI. Once the container is up a
 
 Next, we set up our SSH key and a Private Access Token which can be used to authenticate API calls later used with Jenkins. Please refer the attached images.
 
-![GitLab-root](GitLab-root.png)
+![GitLab-root](img/GitLab-root.png)
 
 <h4 align="center">Root Access</h4>
 
-![GitLab-ssh](GitLab-ssh.png)
+![GitLab-ssh](img/GitLab-ssh.png)
 
 <h4 align="center">SSH Keys</h4>
 
-![GitLab-PAT](GitLab-PAT.png)
+![GitLab-PAT](img/GitLab-PAT.png)
 <h4 align="center">Personal Access Tokens</h4>
 
 ### Installing Jenkins
@@ -91,7 +91,7 @@ again simple. The wizard will automatically install Jenkins onto our system and 
 
 #### Installing Gitlab
 
-To launch GitLab, run the following Docker command in the docker command line interface: 
+To launch GitLab, run the following Docker command in the docker command line interface:
 ```
 sudo docker run --detach --name gitlab \
  --hostname gitlab.example.com \
