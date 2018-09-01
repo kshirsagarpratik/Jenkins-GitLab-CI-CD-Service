@@ -67,7 +67,8 @@ Configuring GitLab was done entirely through the GUI. Once the container is up a
 Next, we set up our SSH key and a Private Access Token which can be used to authenticate API calls later used with Jenkins. Please refer the attached images.
 
 ![GitLab-root](GitLab-root.png)
--> **Root Access** <-
+
+<h4 align="center">Root Access</h4>
 
 
 #### Installing Docker
