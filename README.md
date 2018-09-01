@@ -189,6 +189,10 @@ Using `**git diff**` command we generate a text file called ‘RetestTheseFiles.
 Written some acceptance tests that check whether the HTTP requests
 that every component is making is actually working correctly as intended.
 
+---
+
+## Quick Execution
+
 #### Installing Docker
 
 *For Mac:* Install the stable version of Docker Community Edition for Mac from [here.](https://docs.docker.com/docker-for-mac/install/)
