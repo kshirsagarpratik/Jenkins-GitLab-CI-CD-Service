@@ -77,6 +77,11 @@ Next, we set up our SSH key and a Private Access Token which can be used to auth
 ![GitLab-PAT](GitLab-PAT.png)
 <h4 align="center">Personal Access Tokens</h4>
 
+### Installing Jenkins
+
+We installed Jenkins natively on our machine. The installation process was
+again simple. The wizard will automatically install Jenkins onto our system and then we have to set up an administrator account, initially with the hidden password, which we are prompted to change later on. The GUI is self-explanatory. By default, the Jenkins instance can be accessed at **http://localhost:8080**.
+
 
 #### Installing Docker
 
