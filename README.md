@@ -33,6 +33,33 @@ You can copy the generated ssh key onto clipboard as follows:
 
 `pbcopy < ~/.ssh/id_rsa` —> copying the private part
 
+### Installing Docker
+
+We used Docker to run GitLab server in a container. To install docker, we
+followed these steps (We used a Mac). It was a relatively simple process, a regular application installation through a wizard. The installer can be found [here](https:// store.docker.com/editions/community/docker-ce-desktop-mac)
+
+### Installing GitLab
+
+We ran GitLab CE as a container. So to get the server up and running, we had to execute the following script on the terminal. I have used my /Users/.../CS540/gitlab directory to create volumes for the container. This will help the container store data on my machine. Please change the path as per convenience. We have exposed various ports such as HTTP, HTTPS and SSH. The external URL points to the homepage of GitLab.
+
+    sudo docker run --detach --name gitlab \
+    --hostname gitlab.example.com \
+    --restart always \
+    --volume /Users/pratikkshirsagar/Desktop/CS540/gitlab/config:/
+    etc/gitlab \
+    --volume /Users/pratikkshirsagar/Desktop/CS540/gitlab/logs:/var/
+    log/gitlab \
+    --volume /Users/pratikkshirsagar/Desktop/CS540/gitlab/data:/var/
+    opt/gitlab \
+    --publish 30080:30080 \
+    --publish 20080:80 \
+    --publish 30022:22 \
+    --publish 32768:443 \
+    --env GITLAB_OMNIBUS_CONFIG="external_url 'http://
+    gitlab.example.com:30080';
+    gitlab_rails['gitlab_shell_ssh_port']=30022;" \
+    gitlab/gitlab-ce:latest
+
 #### Installing Docker
 
 *For Mac:* Install the stable version of Docker Community Edition for Mac from [here.](https://docs.docker.com/docker-for-mac/install/)
