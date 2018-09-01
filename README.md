@@ -172,6 +172,22 @@ The following snippet is an example of creating Jenkins jobs and setting up Webh
     gl.auth()
     hooks = project.hooks.create({'url': 'projectURL', 'push_events': 1})
 
+### Jacoco Coverage Report
+
+If the project contains a **.exec** file for Jacoco to execute, then the report contains the respective metrics or else it’s just empty report without any errors.
+
+### Maven Build
+
+We have included the following tasks; clean, test, compile. Generating Understand Reports: We use understand to generate Dependency Graphs and Pie Charts containing post analysis code metrics. We achieve this by using a combination of Understand’s command line (und) and Understand’s python API. Please refer to ‘understand_report.py’ for specifics. Since the API is read-only, we used **‘und’** to create an Understand DB and then the API to add projects and perform analysis.
+
+### Generating Test Recommendations
+
+Using **‘git diff’** command we generate a text file called ‘RetestTheseFiles.txt’ that tells you which files have been modified in the last 3 commits and need to be retested due to their newly modified state. Refer ‘clone.py’ for specifics.
+
+### Acceptance Tests
+
+Written some acceptance tests that check whether the HTTP requests
+that every component is making is actually working correctly as intended.
 
 #### Installing Docker
 
