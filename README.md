@@ -141,8 +141,36 @@ We are essentially using the requests package in python that let’s us deal wit
 The request is as follows:
 
     g = requests.post('http://localhost:30080/api/v4/projects', data = {'name':repo_name,'import_url':repo_url}, headers = {‘Private- Token’:'PRIVATE-TOKEN'})
-    
+
 Note that this POST request is accessing our GitLab host and creating a new project for every such request. We are using a single loop through the JSON file and cloning everything in one go.
+
+### Creating Jenkins jobs
+
+We create a Jenkins job which is essentially the pipeline that will be executed when the job runs. We first create a dummy job through the UI and then extract it’s config.xml. We then modify the XML for every job and create a job for every GitLab repository through a loop. We are using the **“python-jenkins”** and **“python-gitlab”** packages in order to do so.
+
+### Structure of each Jenkins job
+
+We have to specify the source repository URL, the credentials, the build triggers, the build step and the post build actions. For our Jenkins jobs, the configuration is as follows:
+
+    Source Management : Specify the clone URL of GitLab repository.
+    Credentials : SSH Key.
+    Build Trigger : Build when a change is pushed to GitLab (Gitlab plugin comes handy.) Build Step: Maven build with tasks; clean compile test.
+    Post Build Actions : Record Jacoco Coverage Report, Report Build Status to GitLab.
+   
+We feed this configuration into a job config.xml (XML to DSL plugin comes in handy.) Then using python-jenkins we can iteratively create Jenkins job for each GitLab project. Please refer to ‘output.xml’ as a sample.
+
+### Setting up Webhooks for projects -> jobs
+
+With the help of web hooks, every time we push a change into GitLab, the corresponding Jenkins job is triggered. We are creating Webhooks with the python-gitlab package.
+
+The following snippet is an example of creating Jenkins jobs and setting up Webhooks for a project.
+
+    server = jenkins.Jenkins('http://localhost:8080/', username='pkshir2', password='jenkinsrocks') # Pass Jenkins host URL and credentials.
+    user = server.get_whoami()
+    print('Hello %s from Jenkins' % (user['fullName']))
+    gl = gitlab.Gitlab('http://localhost:30080', private_token='9SsFv3LD6ijhGznMSjuK') # Pass the gitlab host URL and generated private API token (from gitlab.)
+    gl.auth()
+    hooks = project.hooks.create({'url': 'projectURL', 'push_events': 1})
 
 
 #### Installing Docker
