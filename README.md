@@ -19,7 +19,7 @@ Our task was to *simulate* a DevOps pipeline with multiple components such as Je
 
 ### Detailed Explanation of steps
 
-[!Jenkins](Jenkins.png)
+[!Jenkins](https://github.com/kshirsagarpratik/Jenkins-GitLab-CI-CD-Service/blob/master/Jenkins.png?raw=true)
 
 #### Installing Docker
 
