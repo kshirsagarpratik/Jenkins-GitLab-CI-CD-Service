@@ -2,6 +2,25 @@
 
 > **Consume and adapt, adapt and evolve.**
 
+## Problem Statement
+
+Our task was to *simulate* a DevOps pipeline with multiple components such as Jenkins CI, our own GitLab server and SciTools Understand, a static code analyzer.
+
+### Breaking down the problem
+
+1. We installed Docker(Community Edition) so as to run a GitLab server as a container on our own local machines.
+2. We installed and configured Jenkins on our system, locally.
+3. We set up a GitLab server and then connected our Jenkins instance to our GitLab server.
+4. The next step was importing open source repositories from GitHub and pushing them onto our GitLab server.
+5. Once we cloned the repositories onto our GitLab server, we create Jenkins jobs that trigger a CI pipeline when there is a push event in any of the GitLab repositories.
+6. For this we needed to set up Web-hooks between GitLab repositories and respective Jenkins jobs.
+7. We then used a static code analysis tool called Understand to generate Dependency graphs and other Analysis reports.
+8. We also used the “git diff” command to find out certain files that may required to be retested due to their newly modified state.
+
+### Detailed Explanation of steps
+
+[!Jenkins](Jenkins.png)
+
 #### Installing Docker
 
 *For Mac:* Install the stable version of Docker Community Edition for Mac from [here.](https://docs.docker.com/docker-for-mac/install/)
