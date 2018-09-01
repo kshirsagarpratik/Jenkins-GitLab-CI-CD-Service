@@ -21,6 +21,16 @@ Our task was to *simulate* a DevOps pipeline with multiple components such as Je
 
 ![Jenkins](https://github.com/kshirsagarpratik/Jenkins-GitLab-CI-CD-Service/blob/master/Jenkins.png?raw=true)
 
+### Generating SSH Keys 
+
+SSH keys are required for secure communication between Jenkins, GitLab server and our local machine which hosts these services. It is easy to create SSH keys as follows:
+`ssh-keygen -t rsa -C “your_email@example.com"`
+
+You can copy the generated ssh key onto clipboard as follows:
+`pbcopy < ~/.ssh/id_rsa.pub` —> for copying the public part pbcopy < 
+
+`~/.ssh/id_rsa` —> copying the private part
+
 #### Installing Docker
 
 *For Mac:* Install the stable version of Docker Community Edition for Mac from [here.](https://docs.docker.com/docker-for-mac/install/)
