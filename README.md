@@ -146,7 +146,7 @@ Note that this POST request is accessing our GitLab host and creating a new proj
 
 ### Creating Jenkins jobs
 
-We create a Jenkins job which is essentially the pipeline that will be executed when the job runs. We first create a dummy job through the UI and then extract it’s config.xml. We then modify the XML for every job and create a job for every GitLab repository through a loop. We are using the **“python-jenkins”** and **“python-gitlab”** packages in order to do so.
+We create a Jenkins job which is essentially the pipeline that will be executed when the job runs. We first create a dummy job through the UI and then extract it’s config.xml. We then modify the XML for every job and create a job for every GitLab repository through a loop. We are using the `**python-jenkins**` and `**python-gitlab**` packages in order to do so.
 
 ### Structure of each Jenkins job
 
@@ -156,8 +156,8 @@ We have to specify the source repository URL, the credentials, the build trigger
     Credentials : SSH Key.
     Build Trigger : Build when a change is pushed to GitLab (Gitlab plugin comes handy.) Build Step: Maven build with tasks; clean compile test.
     Post Build Actions : Record Jacoco Coverage Report, Report Build Status to GitLab.
-   
-We feed this configuration into a job config.xml (XML to DSL plugin comes in handy.) Then using python-jenkins we can iteratively create Jenkins job for each GitLab project. Please refer to **‘output.xml’** as a sample.
+
+We feed this configuration into a job config.xml (XML to DSL plugin comes in handy.) Then using python-jenkins we can iteratively create Jenkins job for each GitLab project. Please refer to `**output.xml**` as a sample.
 
 ### Setting up Webhooks for projects -> jobs
 
@@ -174,15 +174,15 @@ The following snippet is an example of creating Jenkins jobs and setting up Webh
 
 ### Jacoco Coverage Report
 
-If the project contains a **.exec** file for Jacoco to execute, then the report contains the respective metrics or else it’s just empty report without any errors.
+If the project contains an `**.exec**` file for Jacoco to execute, then the report contains the respective metrics or else it’s just empty report without any errors.
 
 ### Maven Build
 
-We have included the following tasks; clean, test, compile. Generating Understand Reports: We use understand to generate Dependency Graphs and Pie Charts containing post analysis code metrics. We achieve this by using a combination of Understand’s command line (und) and Understand’s python API. Please refer to ‘understand_report.py’ for specifics. Since the API is read-only, we used **‘und’** to create an Understand DB and then the API to add projects and perform analysis.
+We have included the following tasks; clean, test, compile. Generating Understand Reports: We use understand to generate Dependency Graphs and Pie Charts containing post analysis code metrics. We achieve this by using a combination of Understand’s command line (und) and Understand’s python API. Please refer to ‘understand_report.py’ for specifics. Since the API is read-only, we used `**und**` to create an Understand DB and then the API to add projects and perform analysis.
 
 ### Generating Test Recommendations
 
-Using **‘git diff’** command we generate a text file called ‘RetestTheseFiles.txt’ that tells you which files have been modified in the last 3 commits and need to be retested due to their newly modified state. Refer ‘clone.py’ for specifics.
+Using `**git diff**` command we generate a text file called ‘RetestTheseFiles.txt’ that tells you which files have been modified in the last 3 commits and need to be retested due to their newly modified state. Refer ‘clone.py’ for specifics.
 
 ### Acceptance Tests
 
