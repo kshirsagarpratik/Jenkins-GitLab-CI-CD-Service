@@ -267,9 +267,9 @@ On non-Windows systems, you may need to create an `STIHOME` environment variable
 
 * In Main.py and Clone.py files, replace the Personal Access Token and URL of GitLab according to your setup. 
 * Also you might have to change your network interface as a parameter in Main.py. (The default interface is the eth0 for WiFi on a Mac.)
-* By that, we mean 'ipconfig getifaddr en0'
+* By that, we mean `'ipconfig getifaddr en0'`
 
-* run the following commands.
+* Run the following commands.
 
 `sudo pip3 install -r requirements.txt`
 
