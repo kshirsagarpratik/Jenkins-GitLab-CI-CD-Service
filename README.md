@@ -106,8 +106,28 @@ We need to create Jenkins global credentials in order to establish a connection 
 
 ![GitLab-ssh](img/4.png)
 
-<h4 align="center">Adding Personal Access Token</h4>
+<h4 align="center">Adding GitLab API Token</h4>
 
+### Integrating Jenkins with GitLab
+
+We go to Manage Jenkins -> Configure System and add the
+GitLab host and credentials. We then test the connection, if successful that means our integration is ready to use. Make sure to select the right credentials and host URL.
+
+![GitLab-ssh](img/5.png)
+
+<h4 align="center">Integrating Jenkins with GitLab</h4>
+
+### Installing Understand
+
+Install SciTools Understand. The professor has given us details of obtaining a educational license. With that, installing the application through a wizard is easy. Once installed, please add path of the und executable to the bash settings. (Export the Path variable.) We will be using the python API hence we need to add another path variable. 
+
+`PATH=/Applications/Understand.app/Contents/MacOS/Python:$PATH PATH=/Applications/Understand.app/Contents/MacOS:$PATH`
+
+The following part assumes that you have python3 installed on your system, along with the pip package installer. You can install python3 from [here](https://www.python.org/downloads/) and pip from [here](https://pip.pypa.io/en/stable/installing/).
+
+Installing the dependencies: execute the following command from the root of the project directory, which contains the requirements.txt file.
+
+`sudo pip3 install -r requirements.txt`
 
 #### Installing Docker
 
