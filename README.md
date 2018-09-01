@@ -157,7 +157,7 @@ We have to specify the source repository URL, the credentials, the build trigger
     Build Trigger : Build when a change is pushed to GitLab (Gitlab plugin comes handy.) Build Step: Maven build with tasks; clean compile test.
     Post Build Actions : Record Jacoco Coverage Report, Report Build Status to GitLab.
    
-We feed this configuration into a job config.xml (XML to DSL plugin comes in handy.) Then using python-jenkins we can iteratively create Jenkins job for each GitLab project. Please refer to ‘output.xml’ as a sample.
+We feed this configuration into a job config.xml (XML to DSL plugin comes in handy.) Then using python-jenkins we can iteratively create Jenkins job for each GitLab project. Please refer to **‘output.xml’** as a sample.
 
 ### Setting up Webhooks for projects -> jobs
 
