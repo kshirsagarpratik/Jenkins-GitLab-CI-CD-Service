@@ -110,8 +110,7 @@ We need to create Jenkins global credentials in order to establish a connection 
 
 ### Integrating Jenkins with GitLab
 
-We go to Manage Jenkins -> Configure System and add the
-GitLab host and credentials. We then test the connection, if successful that means our integration is ready to use. Make sure to select the right credentials and host URL.
+We go to Manage Jenkins -> Configure System and add the GitLab host and credentials. We then test the connection, if successful that means our integration is ready to use. Make sure to select the right credentials and host URL.
 
 ![GitLab-ssh](img/5.png)
 
@@ -121,13 +120,30 @@ GitLab host and credentials. We then test the connection, if successful that mea
 
 Install SciTools Understand. The professor has given us details of obtaining a educational license. With that, installing the application through a wizard is easy. Once installed, please add path of the und executable to the bash settings. (Export the Path variable.) We will be using the python API hence we need to add another path variable. 
 
-`PATH=/Applications/Understand.app/Contents/MacOS/Python:$PATH PATH=/Applications/Understand.app/Contents/MacOS:$PATH`
+    PATH=/Applications/Understand.app/Contents/MacOS/Python:$PATH          PATH=/Applications/Understand.app/Contents/MacOS:$PATH
 
 The following part assumes that you have python3 installed on your system, along with the pip package installer. You can install python3 from [here](https://www.python.org/downloads/) and pip from [here](https://pip.pypa.io/en/stable/installing/).
 
 Installing the dependencies: execute the following command from the root of the project directory, which contains the requirements.txt file.
 
 `sudo pip3 install -r requirements.txt`
+
+### Cloning Repositories from GitHub to GitLab
+
+We have used GitHub’s REST API to filter out repositories that qualify two criteria: their language is “Java” and their build system is “Maven”.
+
+The query is as follows:
+
+    r = requests.get('https://api.github.com/search/repositories? q=language:java+topic:maven', auth = ("username", “password”))
+
+We are essentially using the requests package in python that let’s us deal with HTTP requests. This request gives us a dump of repositories in JSON file. By parsing through the JSON file, we are able to clone each repo onto GitLab with the help of GitLab’s REST API.
+
+The request is as follows:
+
+    g = requests.post('http://localhost:30080/api/v4/projects', data = {'name':repo_name,'import_url':repo_url}, headers = {‘Private- Token’:'PRIVATE-TOKEN'})
+    
+Note that this POST request is accessing our GitLab host and creating a new project for every such request. We are using a single loop through the JSON file and cloning everything in one go.
+
 
 #### Installing Docker
 
