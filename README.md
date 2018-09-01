@@ -4,7 +4,7 @@
 
 ## Problem Statement
 
-Our task was to *simulate* a DevOps pipeline with multiple components such as Jenkins CI, our own GitLab server and SciTools Understand, a static code analyzer.
+Our task was to ***simulate*** a DevOps pipeline with multiple components such as Jenkins CI, our own GitLab server and SciTools Understand, a static code analyzer.
 
 ### Breaking down the problem
 
