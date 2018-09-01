@@ -27,9 +27,7 @@ SSH keys are required for secure communication between Jenkins, GitLab server an
 `ssh-keygen -t rsa -C “your_email@example.com"`
 
 You can copy the generated ssh key onto clipboard as follows:
-`pbcopy < ~/.ssh/id_rsa.pub` —> for copying the public part pbcopy < 
-
-`~/.ssh/id_rsa` —> copying the private part
+`pbcopy < ~/.ssh/id_rsa.pub` —> for copying the public part `pbcopy < ~/.ssh/id_rsa` —> copying the private part
 
 #### Installing Docker
 
