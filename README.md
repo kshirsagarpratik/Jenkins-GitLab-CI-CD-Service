@@ -60,6 +60,13 @@ We ran GitLab CE as a container. So to get the server up and running, we had to 
     gitlab_rails['gitlab_shell_ssh_port']=30022;" \
     gitlab/gitlab-ce:latest
 
+### Configuring GitLab
+
+Configuring GitLab was done entirely through the GUI. Once the container is up and running, which may take a few minutes to spin up, we can access GitLab at **http://localhost:30080** as we’ve set that as our external URL. We have to set up a **root** administrator account which has access to the entire server. We navigate to the **settings** panel from the drop down menu from the user icon at the top right corner. Next,
+  
+we set up our SSH key and a Private Access Token which can be used to authenticate API calls later used with Jenkins. Please refer the attached images.
+
+
 #### Installing Docker
 
 *For Mac:* Install the stable version of Docker Community Edition for Mac from [here.](https://docs.docker.com/docker-for-mac/install/)
