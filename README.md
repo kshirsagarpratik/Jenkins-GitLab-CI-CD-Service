@@ -24,10 +24,14 @@ Our task was to *simulate* a DevOps pipeline with multiple components such as Je
 ### Generating SSH Keys 
 
 SSH keys are required for secure communication between Jenkins, GitLab server and our local machine which hosts these services. It is easy to create SSH keys as follows:
+
 `ssh-keygen -t rsa -C “your_email@example.com"`
 
 You can copy the generated ssh key onto clipboard as follows:
-`pbcopy < ~/.ssh/id_rsa.pub` —> for copying the public part `pbcopy < ~/.ssh/id_rsa` —> copying the private part
+
+`pbcopy < ~/.ssh/id_rsa.pub` —> for copying the public part 
+
+`pbcopy < ~/.ssh/id_rsa` —> copying the private part
 
 #### Installing Docker
 
