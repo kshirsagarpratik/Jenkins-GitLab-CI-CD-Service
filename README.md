@@ -78,13 +78,25 @@ Next, we set up our SSH key and a Private Access Token which can be used to auth
 
 <h4 align="center">Personal Access Tokens</h4>
 
-![GitLab-ssh](img/1.png)
-
 ### Installing Jenkins
 
 We installed Jenkins natively on our machine. The installation process was
 again simple. The wizard will automatically install Jenkins onto our system and then we have to set up an administrator account, initially with the hidden password, which we are prompted to change later on. The GUI is self-explanatory. By default, the Jenkins instance can be accessed at **http://localhost:8080**.
 
+![GitLab-ssh](img/1.png)
+
+On your first run, the Jenkins instance will ask you for the temporary password. You can copy it using the command:
+
+`sudo cat /Users/Shared/Jenkins/Home/secrets/initialAdminPassword`
+
+Follow the default installation instructions per the screen and allow the default plugins to be installed. We will later install all the plugins we need to run our Jenkins jobs.
+
+### Configuring Jenkins
+
+We need to install the following plugins: Jacoco, Job DSL, XML Job to
+Job DSL, All the Git plugins, All the GitLab plugins, All the Maven plugins. We then set up a maven installation for Jenkins as we will be using maven builds as part of our pipeline. This was done through Configure Jenkins -> Global Tool Config.
+
+![GitLab-ssh](img/2.png)
 
 #### Installing Docker
 
