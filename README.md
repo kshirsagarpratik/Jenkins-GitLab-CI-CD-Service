@@ -98,6 +98,17 @@ Job DSL, All the Git plugins, All the GitLab plugins, All the Maven plugins. We 
 
 ![GitLab-ssh](img/2.png)
 
+We need to create Jenkins global credentials in order to establish a connection between Jenkins and GitLab. This can be done through Credentials -> System -> Global -> Add credentials. We add two kinds of credentials: SSH key and GitLab Personal Access Token. Both of which were generated earlier.
+
+![GitLab-ssh](img/3.png)
+
+<h4 align="center">Adding SSH Key</h4>
+
+![GitLab-ssh](img/4.png)
+
+<h4 align="center">Adding Personal Access Token</h4>
+
+
 #### Installing Docker
 
 *For Mac:* Install the stable version of Docker Community Edition for Mac from [here.](https://docs.docker.com/docker-for-mac/install/)
